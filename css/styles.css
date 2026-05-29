@@ -121,12 +121,23 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transition: var(--transition);
   background: transparent;
 }
-.header.is-scrolled {
-  height: 110px;
+/* El fondo difuminado va en un pseudo-elemento, NO en el .header.
+   Si el backdrop-filter estuviera en .header, este se convertiría en el
+   bloque contenedor del .nav (position: fixed) y el menú móvil se rompería
+   al hacer scroll. Con el pseudo-elemento, el .nav sigue anclado a la ventana. */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(21, 23, 30, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
+  opacity: 0;
+  transition: opacity var(--transition);
 }
+.header.is-scrolled { height: 110px; }
+.header.is-scrolled::before { opacity: 1; }
 
 .header__inner { display: flex; align-items: center; justify-content: space-between; }
 
@@ -362,7 +373,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ============================================================
    PROPÓSITO
    ============================================================ */
-.purpose { padding: 7rem 0; background: var(--bg-alt); }
+/* overflow-x: clip recorta el desborde horizontal del efecto 3D (las imágenes
+   laterales se desplazan con translateX) sin afectar el eje vertical ni el
+   viewport durante la animación de cambio de tarjeta. */
+.purpose { padding: 7rem 0; background: var(--bg-alt); overflow-x: clip; }
 .purpose__inner { text-align: center; }
 .purpose__text {
   font-family: var(--serif);
@@ -654,6 +668,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .hero__visual { max-width: none; width: 100%; }
   .carousel { aspect-ratio: 16 / 10; }
   .hero__scroll { display: none; } /* el indicador estorba sobre el carrusel apilado */
+  .hero__badge { display: none; } /* en vertical se sale del contenedor; el dato ya está en las cifras */
   .services__grid { grid-template-columns: repeat(2, 1fr); }
   .why__inner, .contact__inner { grid-template-columns: 1fr; gap: 3rem; }
   /* Marca arriba a todo el ancho; Navegación y Contacto lado a lado */
@@ -709,7 +724,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 @media (max-width: 480px) {
   .services__grid, .why__stats { grid-template-columns: 1fr; }
   .contact__form { padding: 1.8rem; }
-  .hero__badge { left: 0; }
   /* En pantallas muy pequeñas, el footer apila todo en una columna */
   .footer__inner { grid-template-columns: 1fr; }
   .footer__brand { grid-column: auto; }
