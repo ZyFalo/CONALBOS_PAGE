@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CONALBOS Bogotá · Soluciones Jurídicas Integrales</title>
+  <meta name="description" content="CONALBOS Seccional Bogotá. Firma de abogados con más de 40 años de trayectoria: Centro de Conciliación, asesoría jurídica, representación profesional y capacitación legal." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CONALBOS Bogotá · Soluciones Jurídicas Integrales" />
+  <meta property="og:description" content="Más de 40 años fortaleciendo el sector legal. Conciliación, asesoría y representación jurídica en Bogotá." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ====================== HEADER / NAV ====================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="brand" aria-label="CONALBOS Bogotá - Inicio">
+        <img src="assets/img/logo-conalbos.png" alt="CONALBOS Bogotá" class="brand__logo" />
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="#inicio" class="nav__link is-active">Inicio</a></li>
+          <li><a href="#nosotros" class="nav__link">Quiénes somos</a></li>
+          <li><a href="#servicios" class="nav__link">Servicios</a></li>
+          <li><a href="#porque" class="nav__link">Por qué nosotros</a></li>
+          <li><a href="#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+        <a href="#contacto" class="btn btn--gold nav__cta">Solicitar consulta</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ====================== HERO ====================== -->
+    <section class="hero" id="inicio">
+      <div class="hero__arcs" aria-hidden="true">
+        <span class="arc arc--1"></span>
+        <span class="arc arc--2"></span>
+        <span class="arc arc--3"></span>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content reveal">
+          <p class="eyebrow">Firma de abogados · Seccional Bogotá</p>
+          <h1 class="hero__title">
+            Soluciones jurídicas<br />
+            <span class="text-gold">integrales</span> a su medida
+          </h1>
+          <p class="hero__lead">
+            Más de 40 años de trayectoria respaldan nuestra labor. Representación
+            profesional en materia penal, civil y administrativa, conciliación y
+            asesoría especializada para personas y empresas.
+          </p>
+          <div class="hero__actions">
+            <a href="#contacto" class="btn btn--gold">Agendar consulta</a>
+            <a href="#servicios" class="btn btn--ghost">Ver servicios</a>
+          </div>
+
+          <ul class="hero__stats">
+            <li><strong>40+</strong><span>Años de experiencia</span></li>
+            <li><strong>20+</strong><span>Abogados especializados</span></li>
+            <li><strong>1</strong><span>Centro de Conciliación</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="carousel" id="heroCarousel" aria-roledescription="carrusel" aria-label="Imágenes de la firma">
+            <div class="carousel__track" id="carouselTrack">
+              <figure class="slide is-active" role="group" aria-roledescription="diapositiva" aria-label="1 de 4">
+                <img src="assets/img/hero/slide-1.jpg" alt="Estatua de la Dama de la Justicia con la balanza" loading="eager" />
+                <figcaption class="slide__caption">Justicia y equidad</figcaption>
+              </figure>
+              <figure class="slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 4">
+                <img src="assets/img/hero/slide-2.jpg" alt="Biblioteca jurídica con libros antiguos" loading="lazy" />
+                <figcaption class="slide__caption">Conocimiento y trayectoria</figcaption>
+              </figure>
+              <figure class="slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 4">
+                <img src="assets/img/hero/slide-3.jpg" alt="Acuerdo profesional entre dos personas" loading="lazy" />
+                <figcaption class="slide__caption">Acuerdos y conciliación</figcaption>
+              </figure>
+              <figure class="slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 4">
+                <img src="assets/img/hero/slide-4.jpg" alt="Libros de derecho sobre un escritorio" loading="lazy" />
+                <figcaption class="slide__caption">Asesoría especializada</figcaption>
+              </figure>
+            </div>
+
+            <button class="carousel__btn carousel__btn--prev" id="carPrev" aria-label="Imagen anterior">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="carousel__btn carousel__btn--next" id="carNext" aria-label="Imagen siguiente">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+
+            <div class="carousel__dots" id="carDots" role="tablist" aria-label="Seleccionar imagen"></div>
+          </div>
+
+          <div class="hero__badge">
+            <span class="hero__badge-num">+40</span>
+            <span class="hero__badge-text">años defendiendo<br />sus derechos</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#nosotros" class="hero__scroll" aria-label="Bajar">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ====================== PROPÓSITO / NOSOTROS ====================== -->
+    <section class="purpose" id="nosotros">
+      <div class="container purpose__inner reveal">
+        <p class="section-label">Nuestro propósito</p>
+        <h2 class="purpose__text">
+          Brindar a nuestros clientes la prestación de servicios jurídicos y
+          representación profesional con <span class="text-gold">ética,
+          compromiso y excelencia</span>, en materia penal, civil y
+          administrativa.
+        </h2>
+
+        <div class="circ" id="purposeCirc">
+          <!-- Pila de imágenes 3D -->
+          <div class="circ__stage" id="circStage">
+            <img class="circ__img" src="assets/img/proposito/pilar-1.jpg"
+                 alt="Columnas de un tribunal clásico"
+                 data-name="Ética profesional"
+                 data-tag="Nuestro compromiso"
+                 data-quote="Actuamos con transparencia y responsabilidad en cada proceso, defendiendo siempre el interés de quien confía en nosotros." />
+            <img class="circ__img" src="assets/img/proposito/pilar-2.jpg"
+                 alt="Biblioteca con libros jurídicos"
+                 data-name="Experiencia comprobada"
+                 data-tag="Nuestra trayectoria"
+                 data-quote="Cuatro décadas fortaleciendo el sector legal nos permiten ofrecer soluciones sólidas y resultados confiables." />
+            <img class="circ__img" src="assets/img/proposito/pilar-3.jpg"
+                 alt="Asesoría personalizada firmando un documento"
+                 data-name="Atención cercana"
+                 data-tag="Nuestro trato"
+                 data-quote="Acompañamos a cada cliente de manera personalizada, con claridad en cada etapa de su asunto jurídico." />
+          </div>
+
+          <!-- Contenido del pilar activo -->
+          <div class="circ__content">
+            <div class="circ__panel" id="circPanel" aria-live="polite">
+              <p class="circ__tag" id="circTag"></p>
+              <h3 class="circ__name" id="circName"></h3>
+              <p class="circ__quote" id="circQuote"></p>
+            </div>
+            <div class="circ__arrows">
+              <button class="circ__arrow" id="circPrev" aria-label="Pilar anterior">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button class="circ__arrow" id="circNext" aria-label="Pilar siguiente">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== SERVICIOS ====================== -->
+    <section class="services" id="servicios">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-label">Áreas de práctica</p>
+          <h2 class="section-title">Servicios</h2>
+          <p class="section-sub">Asesoría y representación en las principales áreas del derecho, con un equipo especializado a su disposición.</p>
+        </div>
+
+        <div class="services__grid">
+          <!-- Card -->
+          <article class="service reveal">
+            <span class="service__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>
+            </span>
+            <h3 class="service__title">Centro de Conciliación</h3>
+            <p class="service__desc">Mecanismo alternativo para resolver conflictos con la ayuda de un tercero neutral, evitando largos procesos judiciales.</p>
+          </article>
+
+          <article class="service reveal">
+            <span class="service__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v18M5 7l7-4 7 4M4 7l-2 6a4 4 0 0 0 8 0L8 7M16 7l-2 6a4 4 0 0 0 8 0l-2-6"/></svg>
+            </span>
+            <h3 class="service__title">Asesoría Jurídica</h3>
+            <p class="service__desc">Acompañamiento legal integral respaldado por más de 20 abogados especializados en distintas áreas del derecho.</p>
+          </article>
+
+          <article class="service reveal">
+            <span class="service__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+            </span>
+            <h3 class="service__title">Derecho Civil</h3>
+            <p class="service__desc">Contratos, responsabilidad civil, sucesiones, propiedad y demás asuntos de la vida civil de personas y familias.</p>
+          </article>
+
+          <article class="service reveal">
+            <span class="service__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l3 3-7 7-3-3zM2 22l4-1 9-9-3-3-9 9zM15 5l4 4M17 7l4-2-2-3-3 2"/></svg>
+            </span>
+            <h3 class="service__title">Derecho Penal</h3>
+            <p class="service__desc">Representación profesional y defensa técnica en procesos penales ante el Sistema Penal Oral Acusatorio.</p>
+          </article>
+
+          <article class="service reveal">
+            <span class="service__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg>
+            </span>
+            <h3 class="service__title">Derecho Administrativo</h3>
+            <p class="service__desc">Demandas de nulidad y restablecimiento del derecho, y trámites ante entidades públicas del Estado.</p>
+          </article>
+
+          <article class="service reveal">
+            <span class="service__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 3v18h18M7 14l3-3 3 3 5-5"/></svg>
+            </span>
+            <h3 class="service__title">Insolvencia</h3>
+            <p class="service__desc">Procesos de insolvencia para persona natural no comerciante, acuerdos de pago y reorganización de deudas.</p>
+          </article>
+
+          <article class="service reveal">
+            <span class="service__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2M16 15h2a4 4 0 0 1 4 4v2"/></svg>
+            </span>
+            <h3 class="service__title">Acuerdos de Apoyo</h3>
+            <p class="service__desc">Acuerdos de apoyo y directivas anticipadas para el ejercicio de la capacidad legal con plena garantía de derechos.</p>
+          </article>
+
+          <article class="service reveal">
+            <span class="service__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>
+            </span>
+            <h3 class="service__title">Capacitación (ECIC)</h3>
+            <p class="service__desc">Escuela de Capacitación Integral: ciclos de formación para profesionales del derecho en prevención y gestión de conflictos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== POR QUÉ NOSOTROS ====================== -->
+    <section class="why" id="porque">
+      <div class="container why__inner">
+        <div class="why__text reveal">
+          <p class="section-label">Por qué elegirnos</p>
+          <h2 class="section-title">Una firma sólida, un respaldo real</h2>
+          <p class="why__lead">
+            En CONALBOS combinamos la trayectoria de una asociación profesional
+            consolidada con la cercanía de un equipo que entiende cada caso como
+            único.
+          </p>
+          <ul class="why__list">
+            <li><span class="check"></span> Más de 40 años de trayectoria en el sector legal.</li>
+            <li><span class="check"></span> Equipo de más de 20 abogados especializados.</li>
+            <li><span class="check"></span> Centro de Conciliación propio y avalado.</li>
+            <li><span class="check"></span> Atención personalizada y seguimiento de cada proceso.</li>
+            <li><span class="check"></span> Compromiso ético y total confidencialidad.</li>
+          </ul>
+          <a href="#contacto" class="btn btn--gold">Hablemos de su caso</a>
+        </div>
+
+        <div class="why__stats reveal">
+          <div class="stat-card">
+            <strong class="stat-card__num" data-count="40" data-suffix="+">0</strong>
+            <span class="stat-card__label">Años de experiencia</span>
+          </div>
+          <div class="stat-card">
+            <strong class="stat-card__num" data-count="20" data-suffix="+">0</strong>
+            <span class="stat-card__label">Abogados especializados</span>
+          </div>
+          <div class="stat-card">
+            <strong class="stat-card__num" data-count="100" data-suffix="%">0</strong>
+            <span class="stat-card__label">Confidencialidad</span>
+          </div>
+          <div class="stat-card">
+            <strong class="stat-card__num" data-count="8" data-suffix="">0</strong>
+            <span class="stat-card__label">Áreas de práctica</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== CONTACTO ====================== -->
+    <section class="contact" id="contacto">
+      <div class="container contact__inner">
+        <div class="contact__info reveal">
+          <p class="section-label">Contacto</p>
+          <h2 class="section-title">Estamos para ayudarle</h2>
+          <p class="contact__lead">Cuéntenos su caso y un miembro de nuestro equipo se pondrá en contacto con usted a la brevedad.</p>
+
+          <ul class="contact__details">
+            <li>
+              <span class="contact__ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div><strong>Dirección</strong><span>Bogotá, Colombia · <em>(actualizar dirección)</em></span></div>
+            </li>
+            <li>
+              <span class="contact__ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
+              </span>
+              <div><strong>Teléfono</strong><a href="tel:+573000000000">(+57) 300 000 0000 <em>(actualizar)</em></a></div>
+            </li>
+            <li>
+              <span class="contact__ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              </span>
+              <div><strong>Correo</strong><a href="mailto:info@conalbosbogota.com">info@conalbosbogota.com</a></div>
+            </li>
+            <li>
+              <span class="contact__ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              </span>
+              <div><strong>Horario</strong><span>Lunes a viernes · 8:00 a.m. – 4:30 p.m.</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact__form reveal" id="contactForm" novalidate>
+          <div class="field">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Su nombre" required />
+            <small class="error" data-for="nombre"></small>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required />
+              <small class="error" data-for="email"></small>
+            </div>
+            <div class="field">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="(+57) ..." />
+              <small class="error" data-for="telefono"></small>
+            </div>
+          </div>
+          <div class="field">
+            <label for="asunto">Área de interés</label>
+            <select id="asunto" name="asunto">
+              <option value="">Seleccione un área</option>
+              <option>Centro de Conciliación</option>
+              <option>Asesoría Jurídica</option>
+              <option>Derecho Civil</option>
+              <option>Derecho Penal</option>
+              <option>Derecho Administrativo</option>
+              <option>Insolvencia</option>
+              <option>Acuerdos de Apoyo</option>
+              <option>Capacitación (ECIC)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describa brevemente su caso" required></textarea>
+            <small class="error" data-for="mensaje"></small>
+          </div>
+          <button type="submit" class="btn btn--gold btn--block">Enviar solicitud</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#inicio" class="brand brand--footer">
+          <img src="assets/img/logo-conalbos.png" alt="CONALBOS" class="brand__logo" />
+        </a>
+        <p>Firma de abogados con más de 40 años fortaleciendo el sector legal en Colombia.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Navegación de pie de página">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Quiénes somos</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#porque">Por qué nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__contact">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+573000000000">(+57) 300 000 0000</a></li>
+          <li><a href="mailto:info@conalbosbogota.com">info@conalbosbogota.com</a></li>
+          <li>Bogotá, Colombia</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>&copy; <span id="year"></span> CONALBOS Bogotá. Todos los derechos reservados.</p>
+        <p class="footer__legal">
+          <a href="#">Políticas de privacidad</a> ·
+          <a href="#">Términos y condiciones</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#inicio" class="to-top" id="toTop" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
