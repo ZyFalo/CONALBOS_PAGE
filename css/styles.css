@@ -465,7 +465,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--text);
   transition: var(--transition);
 }
-.circ__arrow:hover { background: var(--gold); color: var(--text-on-gold); border-color: transparent; transform: translateY(-2px); }
+/* Solo en dispositivos con puntero real (mouse): evita el "hover pegajoso" en táctil */
+@media (hover: hover) {
+  .circ__arrow:hover { background: var(--gold); color: var(--text-on-gold); border-color: transparent; transform: translateY(-2px); }
+}
+/* Feedback de pulsación en táctil (se quita solo al soltar) */
+.circ__arrow:active { background: var(--gold); color: var(--text-on-gold); border-color: transparent; }
 .circ__arrow svg { width: 22px; height: 22px; }
 
 /* ============================================================
