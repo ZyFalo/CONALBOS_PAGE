@@ -4,20 +4,27 @@
    ============================================================ */
 
 :root {
-  /* Paleta */
-  --bg:          #15171e;   /* fondo principal */
-  --bg-alt:      #1a1d26;   /* secciones alternas */
-  --surface:     #20242f;   /* tarjetas */
-  --surface-2:   #262b38;   /* hover */
-  --line:        rgba(255, 255, 255, 0.08);
+  /* Paleta · tema claro (marfil cálido + dorado) */
+  --bg:          #faf8f3;   /* marfil principal */
+  --bg-alt:      #f1ede3;   /* crema más profunda, secciones alternas */
+  --surface:     #ffffff;   /* tarjetas */
+  --surface-2:   #f6f2e9;   /* hover de tarjetas */
+  --line:        rgba(31, 29, 26, 0.12);
 
-  --gold:        #c79a5b;
+  --gold:        #c79a5b;   /* acento: fills, bordes, dots, gradientes */
   --gold-soft:   #d8b277;
   --gold-deep:   #a87f44;
+  --gold-ink:    #9a6f2e;   /* dorado/bronce para TEXTO sobre fondo claro (legible) */
 
-  --text:        #ececec;
-  --text-muted:  #a3a6ad;
-  --text-dim:    #74777f;
+  --text:        #1f1d1a;   /* carbón cálido */
+  --text-muted:  #5d574c;   /* gris cálido medio */
+  --text-dim:    #8a8478;   /* gris cálido claro */
+
+  --text-on-gold: #1f1407;  /* texto oscuro sobre superficies doradas */
+  --bg-footer:    #efe9dc;  /* footer, beige algo más profundo */
+  --error:        #c0392b;  /* validación: borde */
+  --error-text:   #c0392b;  /* validación: texto */
+  --photo-fg:     #f5f3ee;  /* texto/íconos claros SOBRE fotos */
 
   /* Tipografía */
   --serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
@@ -53,14 +60,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .container { width: min(100% - 3rem, var(--container)); margin-inline: auto; }
 
 /* ----------------------- Tipografía utilitaria ----------------------- */
-.text-gold { color: var(--gold); }
+.text-gold { color: var(--gold-ink); }
 
 .eyebrow,
 .section-label {
   font-size: 0.78rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-ink);
   font-weight: 500;
   margin-bottom: 1rem;
 }
@@ -99,12 +106,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .btn--gold {
   background: linear-gradient(135deg, var(--gold-soft), var(--gold-deep));
-  color: #1a1407;
+  color: var(--text-on-gold);
 }
 .btn--gold:hover { filter: brightness(1.08); transform: translateY(-2px); box-shadow: 0 12px 30px -10px rgba(199, 154, 91, 0.5); }
 
 .btn--ghost { border-color: var(--line); color: var(--text); }
-.btn--ghost:hover { border-color: var(--gold); color: var(--gold); }
+.btn--ghost:hover { border-color: var(--gold); color: var(--gold-ink); }
 
 .btn--block { width: 100%; }
 
@@ -130,7 +137,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(21, 23, 30, 0.92);
+  background: rgba(250, 248, 243, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
   opacity: 0;
@@ -201,7 +208,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border: 1px solid rgba(199, 154, 91, 0.18);
 }
 .arc--1 { width: 600px; height: 600px; top: -180px; left: -200px; }
-.arc--2 { width: 900px; height: 900px; bottom: -400px; right: -300px; border-color: rgba(255,255,255,0.04); }
+.arc--2 { width: 900px; height: 900px; bottom: -400px; right: -300px; border-color: rgba(31,29,26,0.05); }
 .arc--3 { width: 360px; height: 360px; top: 30%; right: 8%; border-color: rgba(199, 154, 91, 0.1); }
 
 .hero__inner {
@@ -236,7 +243,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .hero__stats strong {
   font-family: var(--serif);
   font-size: 2rem;
-  color: var(--gold);
+  color: var(--gold-ink);
   font-weight: 600;
 }
 .hero__stats span { font-size: 0.82rem; color: var(--text-dim); letter-spacing: 0.03em; }
@@ -250,7 +257,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: 6px;
   overflow: hidden;
   border: 1px solid var(--line);
-  box-shadow: 0 40px 80px -40px rgba(0,0,0,0.85);
+  box-shadow: 0 40px 80px -40px rgba(31,29,26,0.16);
   background: var(--surface);
 }
 .carousel__track { position: absolute; inset: 0; }
@@ -280,7 +287,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   z-index: 2;
   font-family: var(--serif);
   font-size: 1.15rem;
-  color: var(--text);
+  color: var(--photo-fg); /* texto claro fijo: va sobre la foto */
   letter-spacing: 0.01em;
   text-shadow: 0 2px 12px rgba(0,0,0,0.6);
 }
@@ -301,15 +308,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   width: 42px; height: 42px;
   display: flex; align-items: center; justify-content: center;
   border-radius: 50%;
-  color: var(--text);
+  color: var(--photo-fg); /* ícono claro fijo: el botón va sobre la foto */
   background: rgba(21,23,30,0.55);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255,255,255,0.15);
   backdrop-filter: blur(4px);
   transition: var(--transition);
   opacity: 0;
 }
 .carousel:hover .carousel__btn { opacity: 1; }
-.carousel__btn:hover { background: var(--gold); color: #1a1407; border-color: transparent; }
+.carousel__btn:hover { background: var(--gold); color: var(--text-on-gold); border-color: transparent; }
 .carousel__btn svg { width: 20px; height: 20px; }
 .carousel__btn--prev { left: 12px; }
 .carousel__btn--next { right: 12px; }
@@ -337,7 +344,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   z-index: 5;
   left: -28px; top: 40px;
   background: linear-gradient(135deg, var(--gold-soft), var(--gold-deep));
-  color: #1a1407;
+  color: var(--text-on-gold);
   padding: 1.2rem 1.5rem;
   border-radius: 4px;
   display: flex;
@@ -413,7 +420,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   object-fit: cover;
   border-radius: 14px;
   border: 1px solid var(--line);
-  box-shadow: 0 30px 60px -25px rgba(0,0,0,0.85);
+  box-shadow: 0 30px 60px -25px rgba(31,29,26,0.16);
   opacity: 0;
   transition: transform 0.8s cubic-bezier(0.4, 2, 0.3, 1), opacity 0.8s cubic-bezier(0.4, 2, 0.3, 1);
   will-change: transform, opacity;
@@ -429,7 +436,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 0.78rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-ink);
   font-weight: 500;
   margin-bottom: 0.8rem;
 }
@@ -458,7 +465,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--text);
   transition: var(--transition);
 }
-.circ__arrow:hover { background: var(--gold); color: #1a1407; border-color: transparent; transform: translateY(-2px); }
+.circ__arrow:hover { background: var(--gold); color: var(--text-on-gold); border-color: transparent; transform: translateY(-2px); }
 .circ__arrow svg { width: 22px; height: 22px; }
 
 /* ============================================================
@@ -481,7 +488,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: var(--surface-2);
   transform: translateY(-6px);
   border-color: rgba(199,154,91,0.4);
-  box-shadow: 0 24px 50px -30px rgba(0,0,0,0.9);
+  box-shadow: 0 24px 50px -30px rgba(31,29,26,0.14);
 }
 .service__icon {
   display: inline-flex;
@@ -489,7 +496,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   align-items: center; justify-content: center;
   border-radius: 50%;
   border: 1px solid rgba(199,154,91,0.35);
-  color: var(--gold);
+  color: var(--gold-ink);
   margin-bottom: 1.4rem;
 }
 .service__icon svg { width: 24px; height: 24px; }
@@ -540,7 +547,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-family: var(--serif);
   font-size: 2.8rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--gold-ink);
   line-height: 1;
 }
 .stat-card__label { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.6rem; display: block; }
@@ -564,7 +571,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: inline-flex; align-items: center; justify-content: center;
   border-radius: 50%;
   background: rgba(199,154,91,0.1);
-  color: var(--gold);
+  color: var(--gold-ink);
 }
 .contact__ico svg { width: 20px; height: 20px; }
 .contact__details strong { display: block; font-weight: 500; font-size: 0.95rem; }
@@ -602,17 +609,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .field input::placeholder, .field textarea::placeholder { color: var(--text-dim); }
 .field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23c79a5b' d='M6 8 0 0h12z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; }
 
-.field.has-error input, .field.has-error textarea { border-color: #d96a5b; }
-.error { color: #e0857a; font-size: 0.78rem; min-height: 0; }
+.field.has-error input, .field.has-error textarea { border-color: var(--error); }
+.error { color: var(--error-text); font-size: 0.78rem; min-height: 0; }
 
 .form-status { font-size: 0.9rem; text-align: center; min-height: 1.2em; }
-.form-status.is-ok { color: var(--gold-soft); }
-.form-status.is-err { color: #e0857a; }
+.form-status.is-ok { color: var(--gold-ink); }
+.form-status.is-err { color: var(--error-text); }
 
 /* ============================================================
    FOOTER
    ============================================================ */
-.footer { background: #101218; border-top: 1px solid var(--line); padding-top: 4rem; }
+.footer { background: var(--bg-footer); border-top: 1px solid var(--line); padding-top: 4rem; }
 .footer__inner {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr;
@@ -620,15 +627,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding-bottom: 3rem;
 }
 .footer__brand p { color: var(--text-muted); font-size: 0.9rem; margin-top: 1.2rem; max-width: 40ch; }
-.footer h4 { font-family: var(--serif); font-weight: 500; font-size: 1.05rem; margin-bottom: 1.2rem; color: var(--gold); }
+.footer h4 { font-family: var(--serif); font-weight: 500; font-size: 1.05rem; margin-bottom: 1.2rem; color: var(--gold-ink); }
 .footer__nav ul, .footer__contact ul { display: grid; gap: 0.7rem; }
 .footer__nav a, .footer__contact a, .footer__contact li { color: var(--text-muted); font-size: 0.9rem; transition: color var(--transition); }
-.footer__nav a:hover, .footer__contact a:hover { color: var(--gold); }
+.footer__nav a:hover, .footer__contact a:hover { color: var(--gold-ink); }
 
 .footer__bottom { border-top: 1px solid var(--line); padding: 1.5rem 0; }
 .footer__bottom-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; }
 .footer__bottom p, .footer__legal a { color: var(--text-dim); font-size: 0.82rem; }
-.footer__legal a:hover { color: var(--gold); }
+.footer__legal a:hover { color: var(--gold-ink); }
 
 /* ============================================================
    BOTÓN VOLVER ARRIBA
@@ -639,7 +646,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   width: 46px; height: 46px;
   display: inline-flex; align-items: center; justify-content: center;
   background: linear-gradient(135deg, var(--gold-soft), var(--gold-deep));
-  color: #1a1407;
+  color: var(--text-on-gold);
   border-radius: 50%;
   opacity: 0;
   visibility: hidden;
